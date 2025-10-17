@@ -61,11 +61,17 @@
         .header-text .role {
             font-size: 18px; 
             font-weight: 400;
-            margin-bottom: 15px; 
+            margin-bottom: 10px; 
             opacity: 0.95;
         }
+        
+        /* Estilo para a linha de contato */
+        .header-contact { 
+            margin-top: 5px; 
+            font-size: 14px;
+        }
 
-        .header-text a {
+        .header-contact a {
             color: var(--cor-clara);
             text-decoration: none;
             font-size: 14px;
@@ -112,11 +118,36 @@
             border-bottom: 1px solid #e0e0e0;
         }
 
-        /* Parágrafos */
-        .main-content p {
+        /* Parágrafos e Listas de Conteúdo Principal */
+        .main-content p, .main-content ul {
             text-align: justify;
             margin-bottom: 18px;
             font-size: 16px;
+        }
+        
+        /* Lista de exemplos práticos: Substitui o foguete por um círculo mais formal */
+        .example-list {
+            list-style-type: none; /* Remove o default */
+            padding-left: 0;
+            margin-top: 10px;
+            margin-bottom: 25px;
+        }
+        
+        .example-list li {
+            position: relative;
+            padding-left: 25px; /* Espaço para o novo marcador */
+            margin-bottom: 12px;
+        }
+
+        .example-list li::before {
+            content: '•'; /* Marcador formal (círculo) */
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: var(--cor-secundaria); /* Cor do marcador */
+            font-size: 1.2em;
+            line-height: 1;
+            font-weight: 700;
         }
 
         /* LISTAS DE DESCRIÇÃO (Competências) */
@@ -138,7 +169,26 @@
             border-left: 2px solid var(--cor-destaque-fundo);
             font-size: 15px;
         }
+        
+        /* Lista de Ferramentas (Nova Seção) */
+        .tools-list {
+            display: flex;
+            flex-wrap: wrap;
+            list-style: none;
+            padding: 0;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
 
+        .tools-list li {
+            background-color: var(--cor-destaque-fundo);
+            color: var(--cor-primaria);
+            padding: 8px 15px;
+            border-radius: 5px;
+            font-size: 14px;
+            font-weight: 600;
+            border: 1px solid var(--cor-secundaria);
+        }
 
         /* Destaques (Highlights) */
         .highlight-box {
@@ -152,12 +202,22 @@
 
         /* RODAPÉ */
         .footer {
-            background-color: #1a1a1a;
-            color: #ccc;
+            background-color: var(--cor-primaria);
+            color: var(--cor-clara); 
             text-align: center;
             padding: 20px;
             font-size: 13px;
             margin-top: 50px;
+        }
+
+        .footer a {
+            color: var(--cor-clara); 
+            text-decoration: none; 
+            font-weight: 600; 
+        }
+        
+        .footer a:hover {
+            text-decoration: underline;
         }
 
         /* RESPONSIVIDADE */
@@ -182,9 +242,9 @@
 
             .header-text .role {
                 font-size: 16px;
-            }
+            }                        
             
-            .header-text a {
+            .header-contact a {
                 display: block; 
                 margin-bottom: 5px;
                 margin-right: 0;
@@ -198,9 +258,9 @@
             .section-title {
                 font-size: 22px;
                 padding-left: 10px;
-            }
+            }                        
             
-            .main-content p, .main-content ul, .highlight-box p {
+            .main-content p, .main-content ul, .highlight-box p, .tools-list li {
                 font-size: 15px;
             }
         }
@@ -211,7 +271,7 @@
         <div class="header-text">
             <h1>Silvanio Gois</h1>
             <p class="role">Gestão Estratégica de Negócios e Projetos</p>
-            <p>
+            <p class="header-contact">
                 <a href="mailto:sg@silvaniogois.com.br">sg@silvaniogois.com.br</a> |
                 <a href="https://www.silvaniogois.com.br" target="_blank">Site Profissional</a>
             </p>
@@ -228,7 +288,11 @@
 
         <h2 class="section-title">1. Planejamento Estratégico — A Fundação do Sucesso</h2>
         <p>O planejamento é a etapa crucial onde intenções são convertidas em ações claras e mensuráveis. Consiste em definir metas, alocar recursos de forma otimizada e estabelecer cronogramas realistas, garantindo que todo o esforço esteja alinhado com os objetivos estratégicos do negócio.</p>
-        <p><strong>Exemplo Prático:</strong> Desenvolvimento de Matriz de Responsabilidade (RACI) e Cronograma Físico-Financeiro, utilizando indicadores de produtividade como base de referência.</p>
+        <p><strong>Aplicação e Impacto:</strong></p>
+        <ul class="example-list">
+            <li>Desenvolvimento de Matriz de Responsabilidade (RACI) para um projeto de implantação de ERP, <strong>reduzindo em 15% os conflitos de escopo</strong> entre áreas.</li>
+            <li>Elaboração de Cronograma Físico-Financeiro utilizando indicadores de produtividade como base, <strong>garantindo a previsibilidade do fluxo de caixa</strong> do projeto.</li>
+        </ul>
 
         <div class="highlight-box">
             <p><strong>Visão:</strong> Um plano robusto transforma uma visão em um roteiro de execução. A precisão na definição do propósito garante a sustentabilidade do projeto.</p>
@@ -236,7 +300,11 @@
 
         <h2 class="section-title">2. Execução Otimizada — Transformando o Plano em Realidade</h2>
         <p>A execução é o motor do projeto. Exige disciplina, comunicação transparente e capacidade de adaptação. Meu foco é na aplicação rigorosa do plano, mantendo a equipe engajada e alinhada às premissas estabelecidas, sempre pronto para responder a desvios com agilidade.</p>
-        <p><strong>Exemplo Prático:</strong> Liderança e acompanhamento semanal do avanço físico-financeiro do projeto, com ciclos de feedback contínuo para correções de rota imediata.</p>
+        <p><strong>Aplicação e Impacto:</strong></p>
+        <ul class="example-list">
+            <li>Liderança e acompanhamento semanal do avanço físico-financeiro do projeto, com ciclos de feedback contínuo para <strong>correções de rota imediata</strong> em momentos críticos.</li>
+            <li>Implementação de sprints e reuniões diárias (Daily Scrums) para projetos de alta complexidade, <strong>aumentando a transparência e a sinergia</strong> da equipe.</li>
+        </ul>
 
         <div class="highlight-box">
             <p><strong>Assertividade:</strong> Executar é mais do que fazer; é realizar com foco e direção. A consistência na ação é o fator chave para superar as metas.</p>
@@ -244,42 +312,55 @@
 
         <h2 class="section-title">3. Controle de Desempenho — Medir, Corrigir e Evoluir</h2>
         <p>O controle é o processo de inteligência do projeto. Envolve o monitoramento contínuo de indicadores-chave de desempenho (KPIs) e a análise crítica de resultados. O objetivo é identificar desvios de escopo, custo e prazo proativamente, implementando ajustes que promovam a melhoria contínua dos processos.</p>
-        <p><strong>Exemplo Prático:</strong> Análise de Variação de Custo e Prazo (EAC/ETC) e a aplicação de lições aprendidas para formalizar ajustes e otimizar processos futuros.</p>
+        <p><strong>Aplicação e Impacto:</strong></p>
+        <ul class="example-list">
+            <li>Análise de Variação de Custo e Prazo (EAC/ETC) em um projeto de construção, permitindo a realocação de recursos e a <strong>recuperação do prazo em 45 dias</strong> após um desvio inicial.</li>
+            <li>Aplicação de lições aprendidas para formalizar ajustes e <strong>otimizar em 10% os processos</strong> de aquisição em projetos futuros.</li>
+        </ul>
 
         <div class="highlight-box">
             <p><strong>Gestão Madura:</strong> O controle não é punitivo, mas um mecanismo de aprendizado. Um gestor estratégico transforma desvios em catalisadores de inovação e eficiência.</p>
         </div>
+        
+        <h2 class="section-title">Ferramentas & Metodologias</h2>
+        <p>Domínio em frameworks ágeis e tradicionais, utilizando a tecnologia como um pilar para a transparência e tomada de decisão baseada em dados.</p>
+        <ul class="tools-list">
+            <li>PMBOK (Tradicional)</li>
+            <li>Scrum e Kanban (Ágil)</li>
+            <li>Análise de Valor Agregado (EV)</li>
+            <li>Jira / Trello</li>
+            <li>MS Project</li>
+            <li>Power BI / Excel Avançado</li>
+        </ul>
 
         <h2 class="section-title">Abordagem Micro ↔ Macro: O Equilíbrio Estratégico</h2>
         <p>Minha metodologia integra as duas visões para garantir a excelência:</p>
             <ul>
                 <li><strong>Micro para o Macro:</strong> Foco no detalhe operacional (tarefas, processos) para construir uma base sólida e eficiente antes de escalar.</li>
                 <li><strong>Macro para o Micro:</strong> Alinhamento com a visão global (missão, propósito) para garantir que cada ação operacional contribua diretamente para o objetivo estratégico da organização.</li>
-            </ul>
+            </ul>        
         
-
         <div class="highlight-box">
             <p><strong>A Chave:</strong> A gestão eficaz reside na capacidade de pensar de forma estratégica e detalhada, mantendo coerência total entre a visão de longo prazo e as atividades diárias.</p>
         </div>
 
         <h2 class="section-title">Competências Essenciais</h2>
-        
-        <dl class="competence-list">
+                <dl class="competence-list">
             <dt>Gestão Estratégica (MBO / Processos)</dt>
             <dd>Habilidade em definir objetivos e indicadores (KPIs) alinhados à estratégia de crescimento da empresa.</dd>
-            
+                        
             <dt>Liderança Situacional e Comunicação</dt>
             <dd>Capacidade de engajar e alinhar equipes, fornecendo feedback estruturado para garantir a execução com excelência.</dd>
-            
+                        
             <dt>Controle Financeiro e de Prazo (EV)</dt>
             <dd>Domínio em técnicas de análise de custo (Earned Value) e produtividade para identificar riscos e garantir o cumprimento do orçamento.</dd>
-            
+                        
             <dt>Análise de Negócios e Otimização</dt>
             <dd>Foco na melhoria contínua de processos e identificação de oportunidades para maximizar o retorno sobre o investimento (ROI).</dd>
         </dl>
 
-        <h2 class="section-title">Conclusão: Gestão como Fator de Crescimento</h2>
-        <p>Gestão é um ciclo contínuo de aprimoramento que exige clareza, disciplina e visão estratégica. A minha expertise reside em aplicar as metodologias de Planejar, Executar e Controlar, utilizando a perspectiva Micro ↔ Macro, para garantir entregas de valor, otimização de recursos e o alinhamento total dos projetos com os objetivos de crescimento do seu negócio.</p>
+        <h2 class="section-title">Proposta de Valor: Gestão como Fator de Crescimento</h2>
+        <p>Gestão é um ciclo contínuo de aprimoramento que exige clareza, disciplina e visão estratégica. A minha expertise reside em aplicar as metodologias de Planejar, Executar e Controlar, utilizando a perspectiva Micro ↔ Macro, para <strong>garantir entregas de valor, otimizar recursos</strong> e <strong>alinhar totalmente seus projetos</strong> com os objetivos de crescimento do seu negócio.</p>
 
         <p style="text-align: center; margin-top: 30px; font-weight: 600; font-size: 18px;">
             <cite>“Gestão é a arte de transformar visões estratégicas em resultados tangíveis.”</cite>
