@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Silvanio Gois — Portfólio: Gestão Estratégica de Projetos</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Variáveis CSS para fácil manutenção das cores */
+        :root {
+            --cor-primaria: #004d80; /* Azul Escuro Institucional */
+            --cor-secundaria: #007bff; /* Azul de Destaque */
+            --cor-fundo: #f8f9fa;
+            --cor-texto: #343a40;
+            --cor-clara: #ffffff;
+            --cor-destaque-fundo: #e9f4fb;
+        }
+
+        /* Reset Básico */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Estilo do Corpo */
+        body {
+            font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
+            background-color: var(--cor-fundo);
+            color: var(--cor-texto);
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        /* CABEÇALHO */
+        .header {
+            background-color: var(--cor-primaria);
+            color: var(--cor-clara);
+            padding: 20px 30px; 
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .header-text {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .header-text h1 {
+            font-size: 32px; 
+            font-weight: 700;
+            margin-bottom: 5px;
+            border-bottom: 3px solid var(--cor-secundaria); 
+            display: inline-block;
+            padding-bottom: 3px;
+        }
+
+        .header-text .role {
+            font-size: 18px; 
+            font-weight: 400;
+            margin-bottom: 15px; 
+            opacity: 0.95;
+        }
+
+        .header-text a {
+            color: var(--cor-clara);
+            text-decoration: none;
+            font-size: 14px;
+            margin-right: 15px;
+        }
+
+        .header-photo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 4px solid var(--cor-clara);
+            background-color: var(--cor-destaque-fundo);
+            flex-shrink: 0;
+        }
+
+        .header-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* CONTEÚDO PRINCIPAL */
+        .main-content {
+            max-width: 960px;
+            margin: 40px auto;
+            padding: 30px;
+            background: var(--cor-clara);
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+
+        /* TÍTULOS */
+        .section-title {
+            color: var(--cor-primaria);
+            margin-top: 35px;
+            margin-bottom: 15px;
+            border-left: 6px solid var(--cor-secundaria);
+            padding-left: 15px;
+            font-size: 24px;
+            font-weight: 600;
+            padding-bottom: 5px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        /* Parágrafos */
+        .main-content p {
+            text-align: justify;
+            margin-bottom: 18px;
+            font-size: 16px;
+        }
+
+        /* LISTAS DE DESCRIÇÃO (Competências) */
+        .competence-list {
+            margin: 20px 0;
+        }
+
+        .competence-list dt {
+            font-weight: 700;
+            color: var(--cor-primaria);
+            margin-top: 10px;
+            font-size: 16px;
+        }
+
+        .competence-list dd {
+            margin-left: 0;
+            margin-bottom: 10px;
+            padding-left: 15px;
+            border-left: 2px solid var(--cor-destaque-fundo);
+            font-size: 15px;
+        }
+
+
+        /* Destaques (Highlights) */
+        .highlight-box {
+            background-color: var(--cor-destaque-fundo);
+            border-left: 5px solid var(--cor-secundaria);
+            padding: 15px 20px;
+            border-radius: 8px;
+            margin: 25px 0;
+            font-style: italic;
+        }
+
+        /* RODAPÉ */
+        .footer {
+            background-color: #1a1a1a;
+            color: #ccc;
+            text-align: center;
+            padding: 20px;
+            font-size: 13px;
+            margin-top: 50px;
+        }
+
+        /* RESPONSIVIDADE */
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                text-align: center;
+                gap: 10px;
+                padding: 15px 20px;
+            }
+
+            .header-photo {
+                margin-top: 0; 
+                order: -1; 
+                width: 100px;
+                height: 100px;
+            }
+
+            .header-text h1 {
+                font-size: 28px;
+            }
+
+            .header-text .role {
+                font-size: 16px;
+            }
+            
+            .header-text a {
+                display: block; 
+                margin-bottom: 5px;
+                margin-right: 0;
+            }
+
+            .main-content {
+                margin: 20px 10px;
+                padding: 20px;
+            }
+
+            .section-title {
+                font-size: 22px;
+                padding-left: 10px;
+            }
+            
+            .main-content p, .main-content ul, .highlight-box p {
+                font-size: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-text">
+            <h1>Silvanio Gois</h1>
+            <p class="role">Gestão Estratégica de Negócios e Projetos</p>
+            <p>
+                <a href="mailto:sg@silvaniogois.com.br">sg@silvaniogois.com.br</a> |
+                <a href="https://www.silvaniogois.com.br" target="_blank">Site Profissional</a>
+            </p>
+        </div>
+        <div class="header-photo">
+            <img src="SG_Executivo-removebg-preview.PNG" alt="Foto profissional de Silvanio Gois">
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="highlight-box">
+            <p><strong>Objetivo:</strong> Apresentar a visão e o domínio técnico sobre a Gestão Estratégica de Projetos e Negócios, focando na aplicação prática, na eficiência e na harmonização entre a estratégia global (Macro) e a execução detalhada (Micro).</p>
+        </div>
+
+        <h2 class="section-title">1. Planejamento Estratégico — A Fundação do Sucesso</h2>
+        <p>O planejamento é a etapa crucial onde intenções são convertidas em ações claras e mensuráveis. Consiste em definir metas, alocar recursos de forma otimizada e estabelecer cronogramas realistas, garantindo que todo o esforço esteja alinhado com os objetivos estratégicos do negócio.</p>
+        <p><strong>Exemplo Prático:</strong> Desenvolvimento de Matriz de Responsabilidade (RACI) e Cronograma Físico-Financeiro, utilizando indicadores de produtividade como base de referência.</p>
+
+        <div class="highlight-box">
+            <p><strong>Visão:</strong> Um plano robusto transforma uma visão em um roteiro de execução. A precisão na definição do propósito garante a sustentabilidade do projeto.</p>
+        </div>
+
+        <h2 class="section-title">2. Execução Otimizada — Transformando o Plano em Realidade</h2>
+        <p>A execução é o motor do projeto. Exige disciplina, comunicação transparente e capacidade de adaptação. Meu foco é na aplicação rigorosa do plano, mantendo a equipe engajada e alinhada às premissas estabelecidas, sempre pronto para responder a desvios com agilidade.</p>
+        <p><strong>Exemplo Prático:</strong> Liderança e acompanhamento semanal do avanço físico-financeiro do projeto, com ciclos de feedback contínuo para correções de rota imediata.</p>
+
+        <div class="highlight-box">
+            <p><strong>Assertividade:</strong> Executar é mais do que fazer; é realizar com foco e direção. A consistência na ação é o fator chave para superar as metas.</p>
+        </div>
+
+        <h2 class="section-title">3. Controle de Desempenho — Medir, Corrigir e Evoluir</h2>
+        <p>O controle é o processo de inteligência do projeto. Envolve o monitoramento contínuo de indicadores-chave de desempenho (KPIs) e a análise crítica de resultados. O objetivo é identificar desvios de escopo, custo e prazo proativamente, implementando ajustes que promovam a melhoria contínua dos processos.</p>
+        <p><strong>Exemplo Prático:</strong> Análise de Variação de Custo e Prazo (EAC/ETC) e a aplicação de lições aprendidas para formalizar ajustes e otimizar processos futuros.</p>
+
+        <div class="highlight-box">
+            <p><strong>Gestão Madura:</strong> O controle não é punitivo, mas um mecanismo de aprendizado. Um gestor estratégico transforma desvios em catalisadores de inovação e eficiência.</p>
+        </div>
+
+        <h2 class="section-title">Abordagem Micro ↔ Macro: O Equilíbrio Estratégico</h2>
+        <p>Minha metodologia integra as duas visões para garantir a excelência:</p>
+            <ul>
+                <li><strong>Micro para o Macro:</strong> Foco no detalhe operacional (tarefas, processos) para construir uma base sólida e eficiente antes de escalar.</li>
+                <li><strong>Macro para o Micro:</strong> Alinhamento com a visão global (missão, propósito) para garantir que cada ação operacional contribua diretamente para o objetivo estratégico da organização.</li>
+            </ul>
+        
+
+        <div class="highlight-box">
+            <p><strong>A Chave:</strong> A gestão eficaz reside na capacidade de pensar de forma estratégica e detalhada, mantendo coerência total entre a visão de longo prazo e as atividades diárias.</p>
+        </div>
+
+        <h2 class="section-title">Competências Essenciais</h2>
+        
+        <dl class="competence-list">
+            <dt>Gestão Estratégica (MBO / Processos)</dt>
+            <dd>Habilidade em definir objetivos e indicadores (KPIs) alinhados à estratégia de crescimento da empresa.</dd>
+            
+            <dt>Liderança Situacional e Comunicação</dt>
+            <dd>Capacidade de engajar e alinhar equipes, fornecendo feedback estruturado para garantir a execução com excelência.</dd>
+            
+            <dt>Controle Financeiro e de Prazo (EV)</dt>
+            <dd>Domínio em técnicas de análise de custo (Earned Value) e produtividade para identificar riscos e garantir o cumprimento do orçamento.</dd>
+            
+            <dt>Análise de Negócios e Otimização</dt>
+            <dd>Foco na melhoria contínua de processos e identificação de oportunidades para maximizar o retorno sobre o investimento (ROI).</dd>
+        </dl>
+
+        <h2 class="section-title">Conclusão: Gestão como Fator de Crescimento</h2>
+        <p>Gestão é um ciclo contínuo de aprimoramento que exige clareza, disciplina e visão estratégica. A minha expertise reside em aplicar as metodologias de Planejar, Executar e Controlar, utilizando a perspectiva Micro ↔ Macro, para garantir entregas de valor, otimização de recursos e o alinhamento total dos projetos com os objetivos de crescimento do seu negócio.</p>
+
+        <p style="text-align: center; margin-top: 30px; font-weight: 600; font-size: 18px;">
+            <cite>“Gestão é a arte de transformar visões estratégicas em resultados tangíveis.”</cite>
+        </p>
+
+    </main>
+
+    <footer class="footer">
+        © 2025 Silvanio Gois — Todos os direitos reservados. |
+        <a href="https://www.silvaniogois.com.br" target="_blank">Retornar ao site principal</a>
+    </footer>
+</body>
+</html>
