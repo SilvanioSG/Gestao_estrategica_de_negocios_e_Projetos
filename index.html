@@ -1,376 +1,207 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Silvanio Gois — Portfólio: Gestão Estratégica de Projetos</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <style>
-        /* Variáveis CSS para fácil manutenção das cores */
-        :root {
-            --cor-primaria: #004d80; /* Azul Escuro Institucional */
-            --cor-secundaria: #007bff; /* Azul de Destaque */
-            --cor-fundo: #f8f9fa;
-            --cor-texto: #343a40;
-            --cor-clara: #ffffff;
-            --cor-destaque-fundo: #e9f4fb;
-        }
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Silvanio Gois — Portfólio Executivo: Gestão Estratégica</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --prim:#003f63;
+      --sec:#0b84ff;
+      --bg:#f6f8fa;
+      --card:#ffffff;
+      --text:#223;
+      --muted:#6b7280;
+      --accent:#e9f4fb;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{
+      font-family:'Poppins', 'Segoe UI', Arial, sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.6;
+    }
 
-        /* Reset Básico */
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+    /* Header */
+    .header{
+      background:var(--prim);
+      color:var(--card);
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:space-between;
+      align-items:center;
+      gap:16px;
+      padding:20px 28px;
+    }
+    .header-left{min-width:220px;flex:1}
+    .name{font-size:26px;font-weight:700;display:inline-block;border-bottom:3px solid var(--sec);padding-bottom:4px}
+    .role{font-size:15px;opacity:.95;margin-top:8px}
+    .contact{margin-top:8px;font-size:14px}
+    .contact a{color:var(--card);text-decoration:none;margin-right:12px}
+    .photo{
+      width:112px;height:112px;border-radius:14px;overflow:hidden;border:3px solid rgba(255,255,255,.12);
+      background:var(--accent);flex-shrink:0;
+    }
+    .photo img{width:100%;height:100%;object-fit:cover;display:block}
 
-        /* Estilo do Corpo */
-        body {
-            font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
-            background-color: var(--cor-fundo);
-            color: var(--cor-texto);
-            line-height: 1.6;
-            scroll-behavior: smooth;
-        }
+    /* Main card */
+    .container{max-width:980px;margin:34px auto;padding:28px;background:var(--card);border-radius:12px;box-shadow:0 8px 28px rgba(10,20,30,.06)}
+    .section-title{
+      color:var(--prim);
+      margin-top:28px;
+      margin-bottom:10px;
+      padding-left:14px;
+      border-left:6px solid var(--sec);
+      font-size:20px;font-weight:600;
+    }
+    p, ul, dl{font-size:15.5px;color:var(--text);margin-bottom:14px}
+    .muted{color:var(--muted);font-size:14px}
+    .example-list{margin-left:18px;margin-bottom:18px}
+    .example-list li{margin-bottom:10px}
+    .example-label{font-weight:700;color:var(--prim)}
 
-        /* CABEÇALHO */
-        .header {
-            background-color: var(--cor-primaria);
-            color: var(--cor-clara);
-            padding: 20px 30px; 
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: space-between;
-            gap: 20px;
-        }
+    .highlight{
+      background:var(--accent);
+      border-left:4px solid var(--sec);
+      padding:12px 16px;border-radius:8px;margin:16px 0;font-style:normal;
+    }
 
-        .header-text {
-            flex: 1;
-            min-width: 250px;
-        }
+    dl{margin-top:6px}
+    dt{font-weight:700;color:var(--prim);margin-top:12px}
+    dd{margin-left:0;padding-left:14px;border-left:2px solid rgba(0,0,0,.03);margin-bottom:10px;color:var(--text)}
 
-        .header-text h1 {
-            font-size: 32px; 
-            font-weight: 700;
-            margin-bottom: 5px;
-            border-bottom: 3px solid var(--cor-secundaria); 
-            display: inline-block;
-            padding-bottom: 3px;
-        }
+    .tools{
+      display:flex;flex-wrap:wrap;gap:8px;margin-top:10px;margin-bottom:14px;
+    }
+    .tool{background:#f0fbff;padding:8px 12px;border-radius:8px;border:1px solid rgba(11,132,255,.12);font-weight:600;color:var(--prim);font-size:13px}
 
-        .header-text .role {
-            font-size: 18px; 
-            font-weight: 400;
-            margin-bottom: 10px; 
-            opacity: 0.95;
-        }
-        
-        /* Estilo para a linha de contato */
-        .header-contact { 
-            margin-top: 5px; 
-            font-size: 14px;
-        }
+    footer{background:var(--prim);color:var(--card);text-align:center;padding:18px;margin-top:28px;border-radius:0 0 12px 12px}
+    footer a{color:var(--card);text-decoration:none;font-weight:600}
 
-        .header-contact a {
-            color: var(--cor-clara);
-            text-decoration: none;
-            font-size: 14px;
-            margin-right: 15px;
-        }
-
-        .header-photo {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            overflow: hidden;
-            border: 4px solid var(--cor-clara);
-            background-color: var(--cor-destaque-fundo);
-            flex-shrink: 0;
-        }
-
-        .header-photo img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
-
-        /* CONTEÚDO PRINCIPAL */
-        .main-content {
-            max-width: 960px;
-            margin: 40px auto;
-            padding: 30px;
-            background: var(--cor-clara);
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-        }
-
-        /* TÍTULOS */
-        .section-title {
-            color: var(--cor-primaria);
-            margin-top: 35px;
-            margin-bottom: 15px;
-            border-left: 6px solid var(--cor-secundaria);
-            padding-left: 15px;
-            font-size: 24px;
-            font-weight: 600;
-            padding-bottom: 5px;
-            border-bottom: 1px solid #e0e0e0;
-        }
-
-        /* Parágrafos e Listas de Conteúdo Principal */
-        .main-content p, .main-content ul {
-            text-align: justify;
-            margin-bottom: 18px;
-            font-size: 16px;
-        }
-        
-        /* Lista de exemplos práticos: Substitui o foguete por um círculo mais formal */
-        .example-list {
-            list-style-type: none; /* Remove o default */
-            padding-left: 0;
-            margin-top: 10px;
-            margin-bottom: 25px;
-        }
-        
-        .example-list li {
-            position: relative;
-            padding-left: 25px; /* Espaço para o novo marcador */
-            margin-bottom: 12px;
-        }
-
-        .example-list li::before {
-            content: '•'; /* Marcador formal (círculo) */
-            position: absolute;
-            left: 0;
-            top: 0;
-            color: var(--cor-secundaria); /* Cor do marcador */
-            font-size: 1.2em;
-            line-height: 1;
-            font-weight: 700;
-        }
-
-        /* LISTAS DE DESCRIÇÃO (Competências) */
-        .competence-list {
-            margin: 20px 0;
-        }
-
-        .competence-list dt {
-            font-weight: 700;
-            color: var(--cor-primaria);
-            margin-top: 10px;
-            font-size: 16px;
-        }
-
-        .competence-list dd {
-            margin-left: 0;
-            margin-bottom: 10px;
-            padding-left: 15px;
-            border-left: 2px solid var(--cor-destaque-fundo);
-            font-size: 15px;
-        }
-        
-        /* Lista de Ferramentas (Nova Seção) */
-        .tools-list {
-            display: flex;
-            flex-wrap: wrap;
-            list-style: none;
-            padding: 0;
-            gap: 10px;
-            margin-bottom: 30px;
-        }
-
-        .tools-list li {
-            background-color: var(--cor-destaque-fundo);
-            color: var(--cor-primaria);
-            padding: 8px 15px;
-            border-radius: 5px;
-            font-size: 14px;
-            font-weight: 600;
-            border: 1px solid var(--cor-secundaria);
-        }
-
-        /* Destaques (Highlights) */
-        .highlight-box {
-            background-color: var(--cor-destaque-fundo);
-            border-left: 5px solid var(--cor-secundaria);
-            padding: 15px 20px;
-            border-radius: 8px;
-            margin: 25px 0;
-            font-style: italic;
-        }
-
-        /* RODAPÉ */
-        .footer {
-            background-color: var(--cor-primaria);
-            color: var(--cor-clara); 
-            text-align: center;
-            padding: 20px;
-            font-size: 13px;
-            margin-top: 50px;
-        }
-
-        .footer a {
-            color: var(--cor-clara); 
-            text-decoration: none; 
-            font-weight: 600; 
-        }
-        
-        .footer a:hover {
-            text-decoration: underline;
-        }
-
-        /* RESPONSIVIDADE */
-        @media (max-width: 768px) {
-            .header {
-                flex-direction: column;
-                text-align: center;
-                gap: 10px;
-                padding: 15px 20px;
-            }
-
-            .header-photo {
-                margin-top: 0; 
-                order: -1; 
-                width: 100px;
-                height: 100px;
-            }
-
-            .header-text h1 {
-                font-size: 28px;
-            }
-
-            .header-text .role {
-                font-size: 16px;
-            }                        
-            
-            .header-contact a {
-                display: block; 
-                margin-bottom: 5px;
-                margin-right: 0;
-            }
-
-            .main-content {
-                margin: 20px 10px;
-                padding: 20px;
-            }
-
-            .section-title {
-                font-size: 22px;
-                padding-left: 10px;
-            }                        
-            
-            .main-content p, .main-content ul, .highlight-box p, .tools-list li {
-                font-size: 15px;
-            }
-        }
-    </style>
+    @media(max-width:760px){
+      .header{padding:14px}
+      .photo{width:92px;height:92px;border-radius:12px}
+      .container{margin:18px 12px;padding:20px}
+    }
+  </style>
 </head>
 <body>
-    <header class="header">
-        <div class="header-text">
-            <h1>Silvanio Gois</h1>
-            <p class="role">Gestão Estratégica de Negócios e Projetos</p>
-            <p class="header-contact">
-                <a href="mailto:sg@silvaniogois.com.br">sg@silvaniogois.com.br</a> |
-                <a href="https://www.silvaniogois.com.br" target="_blank">Site Profissional</a>
-            </p>
-        </div>
-        <div class="header-photo">
-            <img src="SG_Executivo-removebg-preview.PNG" alt="Foto profissional de Silvanio Gois">
-        </div>
-    </header>
+  <header class="header" role="banner">
+    <div class="header-left">
+      <div class="name">Silvanio Gois</div>
+      <div class="role">Gestão Estratégica — Direção, Governança e Resultados</div>
+      <div class="contact muted">
+        <a href="mailto:sg@silvaniogois.com.br">sg@silvaniogois.com.br</a> |
+        <a href="https://www.silvaniogois.com.br" target="_blank" rel="noopener">Site profissional</a>
+      </div>
+    </div>
+    <div class="photo" aria-hidden="true">
+      <img src="SG_Executivo-removebg-preview.PNG" alt="Foto profissional de Silvanio Gois">
+    </div>
+  </header>
 
-    <main class="main-content">
-        <div class="highlight-box">
-            <p><strong>Objetivo:</strong> Apresentar a visão e o domínio técnico sobre a Gestão Estratégica de Projetos e Negócios, focando na aplicação prática, na eficiência e na harmonização entre a estratégia global (Macro) e a execução detalhada (Micro).</p>
-        </div>
+  <main class="container" role="main">
+    <div class="highlight">
+      <strong>Resumo executivo:</strong> Atuo na formulação e governança de modelos de gestão estratégica que transformam metas em decisões e resultados. Minha experiência foca em estruturar objetivos mensuráveis, alinhar lideranças, priorizar investimentos e instituir mecanismos de controle que garantem execução coerente e sustentável.
+    </div>
 
-        <h2 class="section-title">1. Planejamento Estratégico — A Fundação do Sucesso</h2>
-        <p>O planejamento é a etapa crucial onde intenções são convertidas em ações claras e mensuráveis. Consiste em definir metas, alocar recursos de forma otimizada e estabelecer cronogramas realistas, garantindo que todo o esforço esteja alinhado com os objetivos estratégicos do negócio.</p>
-        <p><strong>Aplicação e Impacto:</strong></p>
-        <ul class="example-list">
-            <li>Desenvolvimento de Matriz de Responsabilidade (RACI) para um projeto de implantação de ERP, <strong>reduzindo em 15% os conflitos de escopo</strong> entre áreas.</li>
-            <li>Elaboração de Cronograma Físico-Financeiro utilizando indicadores de produtividade como base, <strong>garantindo a previsibilidade do fluxo de caixa</strong> do projeto.</li>
-        </ul>
+    <h2 class="section-title">Objeto e foco</h2>
+    <p>O objetivo deste portfólio é demonstrar, de forma objetiva, modelos aplicáveis de gestão estratégica — desde definição de objetivos até governança de execução — evidenciando o papel do gestor como formulador de decisões, provocador de alinhamento e garantidor de resultados. Serve para ambientes de construção e operações complexas, bem como para contextos corporativos que demandem disciplina estratégica.</p>
 
-        <div class="highlight-box">
-            <p><strong>Visão:</strong> Um plano robusto transforma uma visão em um roteiro de execução. A precisão na definição do propósito garante a sustentabilidade do projeto.</p>
-        </div>
+    <h2 class="section-title">Modelo objetivo de atuação (visão em 4 passos)</h2>
+    <p>Minha abordagem é prática e replicável. Estruturei-a em quatro etapas claras, apresentadas abaixo com o nível de decisão que cabe ao gestor estratégico.</p>
 
-        <h2 class="section-title">2. Execução Otimizada — Transformando o Plano em Realidade</h2>
-        <p>A execução é o motor do projeto. Exige disciplina, comunicação transparente e capacidade de adaptação. Meu foco é na aplicação rigorosa do plano, mantendo a equipe engajada e alinhada às premissas estabelecidas, sempre pronto para responder a desvios com agilidade.</p>
-        <p><strong>Aplicação e Impacto:</strong></p>
-        <ul class="example-list">
-            <li>Liderança e acompanhamento semanal do avanço físico-financeiro do projeto, com ciclos de feedback contínuo para <strong>correções de rota imediata</strong> em momentos críticos.</li>
-            <li>Implementação de sprints e reuniões diárias (Daily Scrums) para projetos de alta complexidade, <strong>aumentando a transparência e a sinergia</strong> da equipe.</li>
-        </ul>
+    <ul class="example-list">
+      <li><span class="example-label">1. Direcionamento —</span> definição de metas SMART e mapeamento de stakeholders. Papel do gestor: decidir prioridades, aprovar metas e estabelecer governança (comitês, responsáveis e cadências de decisão).</li>
+      <li><span class="example-label">2. Arquitetura de processos —</span> desenhar fronteiras de responsabilidade e fluxos para reduzir atritos. Papel do gestor: validar modelos de processo e aprovar cortes orçamentários e de escopo.</li>
+      <li><span class="example-label">3. Mecanismos de execução —</span> definir marcos, indicadores e regras de exceção. Papel do gestor: priorizar entregas, autorizar recursos e remover impedimentos organizacionais.</li>
+      <li><span class="example-label">4. Controle & Aprendizado —</span> instituir ciclos formais de revisão (KPIs, lições aprendidas, revisões trimestrais). Papel do gestor: decidir ações corretivas e consolidar políticas de melhoria contínua.</li>
+    </ul>
 
-        <div class="highlight-box">
-            <p><strong>Assertividade:</strong> Executar é mais do que fazer; é realizar com foco e direção. A consistência na ação é o fator chave para superar as metas.</p>
-        </div>
+    <h2 class="section-title">Modelos e frameworks (foco decisório)</h2>
+    <p>Escolho e adapto referências consolidadas conforme o contexto organizacional — o gestor define o modelo; as equipes executam. Entre os modelos que costumo adaptar e governar estão:</p>
+    <div class="tools" aria-hidden="false">
+      <div class="tool">MBO (Management by Objectives)</div>
+      <div class="tool">Balanced Scorecard</div>
+      <div class="tool">Gestão por Processos</div>
+      <div class="tool">Lean / Elimin. de Desperdício</div>
+      <div class="tool">Gestão por Exceção (Governança)</div>
+      <div class="tool">Métricas de Valor (ROI / EVM)</div>
+    </div>
+    <p class="muted">Observação: a seleção e calibração do modelo são decisões estratégicas — avalio trade-offs de governança, maturidade organizacional e necessidade de transparência antes de recomendar implementações.</p>
 
-        <h2 class="section-title">3. Controle de Desempenho — Medir, Corrigir e Evoluir</h2>
-        <p>O controle é o processo de inteligência do projeto. Envolve o monitoramento contínuo de indicadores-chave de desempenho (KPIs) e a análise crítica de resultados. O objetivo é identificar desvios de escopo, custo e prazo proativamente, implementando ajustes que promovam a melhoria contínua dos processos.</p>
-        <p><strong>Aplicação e Impacto:</strong></p>
-        <ul class="example-list">
-            <li>Análise de Variação de Custo e Prazo (EAC/ETC) em um projeto de construção, permitindo a realocação de recursos e a <strong>recuperação do prazo em 45 dias</strong> após um desvio inicial.</li>
-            <li>Aplicação de lições aprendidas para formalizar ajustes e <strong>otimizar em 10% os processos</strong> de aquisição em projetos futuros.</li>
-        </ul>
+    <h2 class="section-title">Exemplos de aplicação (papel do gestor — estratégico)</h2>
 
-        <div class="highlight-box">
-            <p><strong>Gestão Madura:</strong> O controle não é punitivo, mas um mecanismo de aprendizado. Um gestor estratégico transforma desvios em catalisadores de inovação e eficiência.</p>
-        </div>
-        
-        <h2 class="section-title">Ferramentas & Metodologias</h2>
-        <p>Domínio em frameworks ágeis e tradicionais, utilizando a tecnologia como um pilar para a transparência e tomada de decisão baseada em dados.</p>
-        <ul class="tools-list">
-            <li>PMBOK (Tradicional)</li>
-            <li>Scrum e Kanban (Ágil)</li>
-            <li>Análise de Valor Agregado (EV)</li>
-            <li>Jira / Trello</li>
-            <li>MS Project</li>
-            <li>Power BI / Excel Avançado</li>
-        </ul>
+    <p style="margin-bottom:6px"><strong>Formato:</strong> para cada exemplo abaixo apresento o contexto, a decisão de gestão que promovi e o impacto observável (resultados típicos ao nível estratégico).</p>
 
-        <h2 class="section-title">Abordagem Micro ↔ Macro: O Equilíbrio Estratégico</h2>
-        <p>Minha metodologia integra as duas visões para garantir a excelência:</p>
-            <ul>
-                <li><strong>Micro para o Macro:</strong> Foco no detalhe operacional (tarefas, processos) para construir uma base sólida e eficiente antes de escalar.</li>
-                <li><strong>Macro para o Micro:</strong> Alinhamento com a visão global (missão, propósito) para garantir que cada ação operacional contribua diretamente para o objetivo estratégico da organização.</li>
-            </ul>        
-        
-        <div class="highlight-box">
-            <p><strong>A Chave:</strong> A gestão eficaz reside na capacidade de pensar de forma estratégica e detalhada, mantendo coerência total entre a visão de longo prazo e as atividades diárias.</p>
-        </div>
+    <ul class="example-list">
+      <li>
+        <strong>Contexto:</strong> portfólio de projetos com entregas simultâneas e conflito por recursos críticos.<br>
+        <strong>Decisão estratégica:</strong> instituir priorização por valor e criar comitê de alocação mensal para decisões de trade-off entre projetos.<br>
+        <strong>Impacto (nível estratégico):</strong> maior previsibilidade de entregas, redução de conflitos entre stakeholders e melhoria no uso de capital — impactos típicos: aumento da taxa de projetos entregues no prazo em 12–18%.
+      </li>
 
-        <h2 class="section-title">Competências Essenciais</h2>
-                <dl class="competence-list">
-            <dt>Gestão Estratégica (MBO / Processos)</dt>
-            <dd>Habilidade em definir objetivos e indicadores (KPIs) alinhados à estratégia de crescimento da empresa.</dd>
-                        
-            <dt>Liderança Situacional e Comunicação</dt>
-            <dd>Capacidade de engajar e alinhar equipes, fornecendo feedback estruturado para garantir a execução com excelência.</dd>
-                        
-            <dt>Controle Financeiro e de Prazo (EV)</dt>
-            <dd>Domínio em técnicas de análise de custo (Earned Value) e produtividade para identificar riscos e garantir o cumprimento do orçamento.</dd>
-                        
-            <dt>Análise de Negócios e Otimização</dt>
-            <dd>Foco na melhoria contínua de processos e identificação de oportunidades para maximizar o retorno sobre o investimento (ROI).</dd>
-        </dl>
+      <li>
+        <strong>Contexto:</strong> ciclo de planejamento sem alinhamento entre áreas técnicas e comercial, gerando retrabalhos e variações de escopo.<br>
+        <strong>Decisão estratégica:</strong> estabelecer critérios de aprovação de escopo e pontos de revisão obrigatória antes de formalizar contratos.<br>
+        <strong>Impacto (nível estratégico):</strong> redução de aditivos contratuais e menor volatilidade de custo — impacto típico de governança: queda de 10–20% em alterações contratuais pós-assinatura.
+      </li>
 
-        <h2 class="section-title">Proposta de Valor: Gestão como Fator de Crescimento</h2>
-        <p>Gestão é um ciclo contínuo de aprimoramento que exige clareza, disciplina e visão estratégica. A minha expertise reside em aplicar as metodologias de Planejar, Executar e Controlar, utilizando a perspectiva Micro ↔ Macro, para <strong>garantir entregas de valor, otimizar recursos</strong> e <strong>alinhar totalmente seus projetos</strong> com os objetivos de crescimento do seu negócio.</p>
+      <li>
+        <strong>Contexto:</strong> necessidade de aumentar eficiência operacional sem elevar riscos de qualidade.<br>
+        <strong>Decisão estratégica:</strong> implementar metas de desempenho por processo (KPI) e vincular revisões trimestrais de desempenho à priorização de investimentos e incentivos.<br>
+        <strong>Impacto (nível estratégico):</strong> melhoria da eficiência e responsabilização — ganhos típicos: redução de desperdícios operacionais de 8–20% e maior aderência ao cronograma.
+      </li>
+    </ul>
 
-        <p style="text-align: center; margin-top: 30px; font-weight: 600; font-size: 18px;">
-            <cite>“Gestão é a arte de transformar visões estratégicas em resultados tangíveis.”</cite>
-        </p>
+    <div class="highlight">
+      <strong>Observação prática:</strong> Em todos os exemplos o gestor atua decidindo estruturas de governança, critérios de priorização e regras de exceção — as ferramentas e a execução operacional ficam sob responsabilidade das áreas técnicas e de projetos conforme a governança definida.
+    </div>
 
-    </main>
+    <h2 class="section-title">Estudos de caso sintéticos (síntese do papel estratégico)</h2>
+    <p>As sínteses abaixo são modelos práticos que você pode apresentar em entrevistas ou reuniões para demonstrar raciocínio estratégico — expõem claramente o papel de decisão e o resultado esperável.</p>
 
-    <footer class="footer">
-        © 2025 Silvanio Gois — Todos os direitos reservados. |
-        <a href="https://www.silvaniogois.com.br" target="_blank">Retornar ao site principal</a>
-    </footer>
+    <ul class="example-list">
+      <li>
+        <span class="example-label">Projeto Integrado de Obras — Síntese:</span>
+        <br>Conduzi a aprovação de um modelo de priorização por valor, defini KPIs essenciais e instalei cadência de governança mensal. <strong>Papel:</strong> decisão e coordenação entre diretoria, compras e execução. <strong>Resultado típico:</strong> maior alinhamento de escopo e redução média de 15% em retrabalhos entre disciplinas.
+      </li>
+
+      <li>
+        <span class="example-label">Programa de Melhoria de Processos — Síntese:</span>
+        <br>Promovi a reestruturação do ciclo de planejamento e revisão orçamentária com foco em responsabilização. <strong>Papel:</strong> promover disciplina de revisão e decidir critérios de liberação de recursos. <strong>Resultado típico:</strong> ganho de previsibilidade financeira e aumento da qualidade de decisão estratégica.
+      </li>
+    </ul>
+
+    <h2 class="section-title">Competências de liderança estratégica</h2>
+    <dl>
+      <dt>Definição e Prioritização de Objetivos</dt>
+      <dd>Capacidade de traduzir visão em metas acionáveis e priorizar investimentos com regras claras de trade-off.</dd>
+
+      <dt>Governança e Tomada de Decisão</dt>
+      <dd>Instituição de comitês, cadências e limites de autoridade que aceleram decisões e reduzem ambiguidade.</dd>
+
+      <dt>Integração Organizacional</dt>
+      <dd>Habilidade em articular diretrizes entre áreas (comercial, técnica, compras, financeiro) garantindo execução coerente.</dd>
+
+      <dt>Medição e Correção</dt>
+      <dd>Definição de KPIs estratégicos e regras de exceção que ativam ações corretivas quando necessário.</dd>
+    </dl>
+
+    <h2 class="section-title">Proposta de valor — como eu atuo</h2>
+    <p>Assumo a responsabilidade por delinear o modelo de gestão mais apropriado ao contexto: definir metas, estruturar governança, priorizar iniciativas e decidir alocações críticas. Meu trabalho é reduzir incerteza para a liderança, permitir decisões mais rápidas e proteger o valor do investimento organizacional.</p>
+
+    <div class="highlight">
+      <strong>Indicadores de decisão:</strong> metas SMART, KPIs estratégicos, regras de priorização e cadências de governança — aplicados com foco em resultado e sustentabilidade.
+    </div>
+
+    <p style="text-align:center;margin-top:18px;font-weight:600">“Direção estratégica é selecionar o que será entregue, quando e por que — o modo como isso é governado define o sucesso.”</p>
+
+  </main>
+
+  <footer>
+    © 2025 Silvanio Gois — Gestão Estratégica e Governança | <a href="https://www.silvaniogois.com.br" target="_blank" rel="noopener">Retornar ao site</a>
+  </footer>
 </body>
 </html>
